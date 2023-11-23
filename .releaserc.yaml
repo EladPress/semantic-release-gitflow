@@ -1,6 +1,6 @@
 branches: 
   - main
-  - name: 'beta'
+  - name: 'testing'
     prerelease: true
 plugins:
 - '@semantic-release/commit-analyzer'
