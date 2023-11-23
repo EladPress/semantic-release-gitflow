@@ -14,6 +14,8 @@ analyzeCommits:
     releaseRules:
     - type: 'feat'
       release: 'minor'
+    - type: 'feature'
+      release: 'minor'
     - type: 'fix'
       release: 'patch'
     - type: 'patch'
