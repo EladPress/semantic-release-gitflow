@@ -19,8 +19,7 @@ export async function analyzeCommits(pluginConfig, context) {
     const { commits, logger } = context;
     logger.log(commits)
     const pjson = require('./package.json');
-    console.log(pjson.name + '@' + pjson.version);
-    logger.log();
+    logger.log(pjson.name + '@' + pjson.version);
     logger.log("pluginConfig: " + JSON.stringify(pluginConfig));
     logger.log("release rules: " + JSON.stringify(pluginConfig.releaseRules));
 }
