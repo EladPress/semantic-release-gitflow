@@ -17,5 +17,6 @@
 
 export async function analyzeCommits(pluginConfig, context) {
     const { commits, logger } = context;
+    logger.log(commits)
     logger.log("Elad testing Hello");
 }
