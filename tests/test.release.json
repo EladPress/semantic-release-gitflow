@@ -14,7 +14,6 @@
     ],
     "plugins": [
       "@eladpress/semantic-release-gitflow",
-      "@semantic-release/release-notes-generator",
       [
         "@semantic-release/npm",
         {
