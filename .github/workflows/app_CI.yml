@@ -1,0 +1,38 @@
+name: App CI
+## testing beta branch 
+on:
+  push:
+    branches: "*"
+  pull_request:
+    branches: [ "main" ]
+
+env: 
+  branch_name: ${{ github.ref_name }}
+  build_number: ${{ github.run_number }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  APP_NAME: 'semantic-release-gitflow'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: setup semantic-release
+      run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog @eladpress/semantic-release-gitflow -D
+    - name: release
+      run: npx semantic-release

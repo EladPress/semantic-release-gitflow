@@ -1,0 +1,19 @@
+{
+  "name": "@eladpress/semantic-release-gitflow",
+  "version": "1.0.0",
+  "description": "A plugin for Semantic-Release that lets you work with gitflow, as in determining the next release version by the branch name prefix that was merged into the release branch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EladPress/semantic-release-gitflow.git"
+  },
+  "author": "eladpress <presselad2@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EladPress/semantic-release-gitflow/issues"
+  },
+  "homepage": "https://github.com/EladPress/semantic-release-gitflow#readme"
+}
