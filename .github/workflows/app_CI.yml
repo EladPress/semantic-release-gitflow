@@ -1,5 +1,5 @@
 name: App CI
-## testing beta branch 
+
 on:
   push:
     branches: "*"
