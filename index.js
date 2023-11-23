@@ -1,4 +1,4 @@
-
+import {version, name} from './package.json'
 
 /**
  * Determine the type of release to create based on a list of commits.
@@ -18,8 +18,8 @@
 export async function analyzeCommits(pluginConfig, context) {
     const { commits, logger } = context;
     logger.log(commits)
-    const pjson = require('./package.json');
-    logger.log(pjson.name + '@' + pjson.version);
+
+    logger.log(name + '@' + version);
     logger.log("pluginConfig: " + JSON.stringify(pluginConfig));
     logger.log("release rules: " + JSON.stringify(pluginConfig.releaseRules));
 }
