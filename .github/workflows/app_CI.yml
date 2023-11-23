@@ -10,6 +10,7 @@ env:
   branch_name: ${{ github.ref_name }}
   build_number: ${{ github.run_number }}
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
   APP_NAME: 'semantic-release-gitflow'
 
 jobs:
