@@ -1,0 +1,29 @@
+name: Test NPM Package
+
+on:
+  workflow_run:
+    workflows: ["App CI"]
+    types:
+      - completed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+        contents: write
+        issues: write
+        pull-requests: write
+    strategy:
+        matrix:
+            node-version: [18.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: setup semantic-release
+      run: npm install -g semantic-release @semantic-release/git @semantic-release/changelog @eladpress/semantic-release-gitflow@^1.1.3-testing.2 -D
+    - name: release
+      run: npx semantic-release 

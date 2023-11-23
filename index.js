@@ -1,4 +1,4 @@
-import {version, name} from './package.json'
+import {version, name} from './package.json' assert { type: "json" };
 
 /**
  * Determine the type of release to create based on a list of commits.
