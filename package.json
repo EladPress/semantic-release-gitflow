@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/EladPress/semantic-release-gitflow/issues"
   },
-  "homepage": "https://github.com/EladPress/semantic-release-gitflow#readme"
+  "homepage": "https://github.com/EladPress/semantic-release-gitflow#readme",
+  "dependencies": {
+    "get-project-version": "^1.0.3"
+  }
 }

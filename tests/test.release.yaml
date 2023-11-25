@@ -1,20 +1,24 @@
 branches: 
-  - main
-  - name: 'testing'
+  - 'master'
+  - 'release/*'
+  - 'gitflow-testing-semver'
+  - name: 'jenkins-on-os'
     prerelease: true
+  - name: 'split-up-semver'
+    prerelease: false
 plugins:
-- '@semantic-release/commit-analyzer'
+- '@eladpress/semantic-release-gitflow'
 - '@semantic-release/release-notes-generator'
-# - '@semantic-release/git'
-- '@semantic-release/github'
 - - '@semantic-release/npm'
-  - npmPublish: true
+  - npmPublish: false
+- - '@semantic-release/git'
+  - assets:
+    - package.json
+    - ./chart/Chart.yaml
 analyzeCommits:
-  - path: '@semantic-release/commit-analyzer'
+  - path: '@eladpress/semantic-release-gitflow'
     releaseRules:
     - type: 'feat'
-      release: 'minor'
-    - type: 'feature'
       release: 'minor'
     - type: 'fix'
       release: 'patch'

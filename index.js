@@ -1,4 +1,4 @@
-
+// import {version} from './package.json' assert { type: "json" };
 
 /**
  * Determine the type of release to create based on a list of commits.
@@ -17,6 +17,12 @@
 
 export async function analyzeCommits(pluginConfig, context) {
     const { commits, logger } = context;
+
     logger.log(commits)
-    logger.log("Elad testing Hello");
+
+    // logger.log('semantic-release-gitflow@' + version);
+    logger.log("pluginConfig: " + JSON.stringify(pluginConfig));
+    logger.log("release rules: " + JSON.stringify(pluginConfig.releaseRules));
+    logger.log("testing, let's return major")
+    return "major"
 }
