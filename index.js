@@ -23,6 +23,6 @@ export async function analyzeCommits(pluginConfig, context) {
     // logger.log('semantic-release-gitflow@' + version);
     logger.log("pluginConfig: " + JSON.stringify(pluginConfig));
     logger.log("release rules: " + JSON.stringify(pluginConfig.releaseRules));
-    logger.log("testing, let's return major")
-    return "major"
+    logger.log("testing, let's return minor");
+    return "minor";
 }
